@@ -70,12 +70,12 @@ public extension String {
         return predicate.evaluate(with: self)
     }
     
-    public func trim() -> String {
+    func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .whitespaces)
     }
     
     /// 去除前后空格换行 中间多个空格和换行变成一个
-    public func stringWhitespacesAndLines() -> String{
+    func stringWhitespacesAndLines() -> String{
         var resultString = self.trimmingCharacters(in: .whitespacesAndNewlines)
         while resultString.contains("  ") {
             resultString = resultString.replacingOccurrences(of: "  ", with: " ")
