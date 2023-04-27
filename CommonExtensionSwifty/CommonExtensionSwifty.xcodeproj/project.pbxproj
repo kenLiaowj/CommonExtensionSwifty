@@ -20,6 +20,8 @@
 		84DD227929F2307300F28F0E /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD227829F2307300F28F0E /* KeyChainStorage.swift */; };
 		84DD227B29F279B700F28F0E /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD227A29F279B700F28F0E /* DefaultValue.swift */; };
 		84DD227D29F27F1800F28F0E /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD227C29F27F1800F28F0E /* JsonParser.swift */; };
+		84DEF13429FA627D00099121 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DEF13329FA627D00099121 /* Images.xcassets */; };
+		84DEF13629FA62DC00099121 /* TestResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DEF13529FA62DC00099121 /* TestResourceView.swift */; };
 		84E5B2AD29F61F7600B8FB24 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B2AC29F61F7600B8FB24 /* Date+Extension.swift */; };
 		84E5B2C329F6666900B8FB24 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B2C229F6666900B8FB24 /* Calendar+Extension.swift */; };
 		84E5B2C529F6676D00B8FB24 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B2C429F6676D00B8FB24 /* UIView+Extension.swift */; };
@@ -41,6 +43,8 @@
 		84DD227829F2307300F28F0E /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		84DD227A29F279B700F28F0E /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
 		84DD227C29F27F1800F28F0E /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		84DEF13329FA627D00099121 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84DEF13529FA62DC00099121 /* TestResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResourceView.swift; sourceTree = "<group>"; };
 		84E5B2AC29F61F7600B8FB24 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		84E5B2C229F6666900B8FB24 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		84E5B2C429F6676D00B8FB24 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		8488743229E6CC17006E2C36 /* CommonExtensionSwifty */ = {
 			isa = PBXGroup;
 			children = (
+				84DEF13229FA625400099121 /* Resources */,
 				8488744729E6CC29006E2C36 /* Classes */,
 				8488743329E6CC17006E2C36 /* AppDelegate.swift */,
 				8488743529E6CC17006E2C36 /* SceneDelegate.swift */,
@@ -101,8 +106,17 @@
 				84E5B2AC29F61F7600B8FB24 /* Date+Extension.swift */,
 				84E5B2C229F6666900B8FB24 /* Calendar+Extension.swift */,
 				84E5B2C429F6676D00B8FB24 /* UIView+Extension.swift */,
+				84DEF13529FA62DC00099121 /* TestResourceView.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		84DEF13229FA625400099121 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84DEF13329FA627D00099121 /* Images.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8488744029E6CC18006E2C36 /* LaunchScreen.storyboard in Resources */,
+				84DEF13429FA627D00099121 /* Images.xcassets in Resources */,
 				8488743D29E6CC18006E2C36 /* Assets.xcassets in Resources */,
 				8488743B29E6CC17006E2C36 /* Main.storyboard in Resources */,
 			);
@@ -188,6 +203,7 @@
 				84DD227D29F27F1800F28F0E /* JsonParser.swift in Sources */,
 				84DD227529F22A3A00F28F0E /* UIColor+Extension.swift in Sources */,
 				8488743429E6CC17006E2C36 /* AppDelegate.swift in Sources */,
+				84DEF13629FA62DC00099121 /* TestResourceView.swift in Sources */,
 				8488743629E6CC17006E2C36 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

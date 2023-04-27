@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CommonExtensionSwifty"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "Common extension in swift."
 
   # This description is used to generate tags and improve search results.
@@ -94,6 +94,8 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "CommonExtensionSwifty", "CommonExtensionSwifty/CommonExtensionSwifty/Classes/*.{h,m,swift}"
   spec.exclude_files = "Classes/Exclude"
+  # 资源文件
+  spec.resources = ['CommonExtensionSwifty/CommonExtensionSwifty/Resources/*']
 
   # spec.public_header_files = "Classes/**/*.h"
 
