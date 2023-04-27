@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CommonExtensionSwifty"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "Common extension in swift."
 
   # This description is used to generate tags and improve search results.
@@ -73,6 +73,7 @@ Pod::Spec.new do |spec|
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
   spec.swift_versions = "5.0"
+  spec.frameworks = "UIKit"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -96,6 +97,12 @@ Pod::Spec.new do |spec|
   spec.exclude_files = "Classes/Exclude"
   # 资源文件
   spec.resources = ['CommonExtensionSwifty/CommonExtensionSwifty/Resources/*']
+
+  # 视图子模块，需依赖SnapKit库
+  spec.subspec "Views" do |views|
+    views.source_files = "CommonExtensionSwifty/CommonExtensionSwifty/Classes/Views/*.{h,m,swift}"
+    views.dependency 'SnapKit'
+  end
 
   # spec.public_header_files = "Classes/**/*.h"
 
