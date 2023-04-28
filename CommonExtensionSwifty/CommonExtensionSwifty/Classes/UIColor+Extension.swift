@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     /// 十六进制字符串生成颜色
     @objc convenience init(hex: String) {
         var hex = hex.trimmingCharacters(in: NSCharacterSet.alphanumerics.inverted)

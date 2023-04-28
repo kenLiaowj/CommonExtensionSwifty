@@ -24,7 +24,7 @@ fileprivate let termInfo = [ 0.0   , 21208 , 42467 , 63836 , 85337 , 107014,
                              263343, 285989, 308563, 331033, 353350, 375494,
                              397447, 419210, 440795, 462224, 483532, 504758 ]
 
-extension Date {
+public extension Date {
     
     /// 年
     var year: Int {

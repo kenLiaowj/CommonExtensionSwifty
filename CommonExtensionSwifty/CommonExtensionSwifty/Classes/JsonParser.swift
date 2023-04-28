@@ -9,21 +9,24 @@ import Foundation
 
 import Foundation
 
-enum JSONParseError: Error {
+public enum JSONParseError: Error {
     case invalidData
     case missingValue(key: String)
     case typeMismatch(key: String)
 }
 
-class JSONParser {
+public class JSONParser {
     /// 解析json字符串成对象
-    static func parseObject<T: Decodable>(_ json: String, type: T.Type, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> (T?, JSONParseError?) {
+    public static func parseObject<T: Decodable>(_ json: String,
+                                                 type: T.Type, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
+                                                 dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .secondsSince1970) -> (T?, JSONParseError?) {
         guard let data = json.data(using: .utf8) else {
             return (nil, JSONParseError.invalidData)
         }
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = keyDecodingStrategy
+            decoder.dateDecodingStrategy = dateDecodingStrategy
             let object = try decoder.decode(type, from: data)
             return (object, nil)
             
@@ -33,7 +36,10 @@ class JSONParser {
     }
     
     /// 解析json字符串成数组
-    static func parseArray<T: Decodable>(_ json: String, type: T.Type, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> ([T], JSONParseError?) {
+    public static func parseArray<T: Decodable>(_ json: String,
+                                                type: T.Type,
+                                                keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
+                                                dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .secondsSince1970) -> ([T], JSONParseError?) {
         guard let data = json.data(using: .utf8) else {
             return ([], JSONParseError.invalidData)
         }
@@ -48,7 +54,7 @@ class JSONParser {
     }
     
     /// 解析json字符串成字典
-    static func parseDictionary(_ json: String) -> ([String: Any], JSONParseError?)  {
+    public static func parseDictionary(_ json: String) -> ([String: Any], JSONParseError?)  {
         guard let data = json.data(using: .utf8) else {
             return ([:], JSONParseError.invalidData)
         }
@@ -61,14 +67,16 @@ class JSONParser {
     }
     
     /// 解析json字符串中指定key成对象
-    static func parseObject<T: Decodable>(_ json: String, type: T.Type, key: String) -> (T?, JSONParseError?) {
+    public static func parseObject<T: Decodable>(_ json: String,
+                                                 type: T.Type, key: String,
+                                                 dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .secondsSince1970) -> (T?, JSONParseError?) {
         do {
             if let data = json.data(using: .utf8),
                let dict = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>,
                let jsonDic = dict[key] as? Dictionary<String,Any> {
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDic)
                 if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    return Self.parseObject(jsonString, type: type)
+                    return Self.parseObject(jsonString, type: type, dateDecodingStrategy: dateDecodingStrategy)
                     
                 } else {
                     return (nil, JSONParseError.invalidData)

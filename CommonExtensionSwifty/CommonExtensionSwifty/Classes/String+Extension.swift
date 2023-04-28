@@ -106,7 +106,7 @@ public extension String {
 }
 
 // MARK: - 颜色相关
-extension String {
+public extension String {
     /// 十六进制字符串生成颜色
     public var color: UIColor {
         if self.isEmpty {

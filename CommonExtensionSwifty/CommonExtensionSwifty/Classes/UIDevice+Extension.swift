@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIDevice {
+public extension UIDevice {
     
     /// 获取设备id
     static func device_id(deviceIDHandler: (() -> String)? = { UUID().uuidString }) -> String {

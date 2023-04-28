@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
     /// 识别图片中的二维码
     func detectorQRCode() -> String {

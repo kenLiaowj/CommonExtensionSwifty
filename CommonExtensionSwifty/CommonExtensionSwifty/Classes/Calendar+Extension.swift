@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Calendar {
+public extension Calendar {
     
     /// 公历
     static var gregorian: Calendar {

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-extension UIView {
+public extension UIView {
     
     // MARK: - IBInspectable
     /// 圆角
@@ -175,7 +175,7 @@ extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     /// view 所属控制器
     var viewController: UIViewController? {
         var next:UIView? = self
